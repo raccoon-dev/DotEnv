@@ -1,0 +1,5 @@
+  // Comment
+VARIABLE1="var 1"
+
+  # Another comment
+  VARIABLE2 = "var 2"
