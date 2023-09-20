@@ -5,6 +5,8 @@ interface
 uses
   System.Classes, System.SysUtils, System.Types, Winapi.Windows;
 
+{x$DEFINE USE_APP_ENV}
+
 type TDotEnv = class(TInterfacedObject, IInterface)
   private
     FEnvList: TStrings;
@@ -48,6 +50,9 @@ begin
     Strings.ValueFromIndex[idx] := Value
   else
     Strings.AddPair(Name, Value);
+{$IFDEF USE_APP_ENV}
+  SetEnvironmentVariable(PChar(Name), PChar(Value));
+{$ENDIF}
 end;
 
 procedure TDotEnv.AddItem(Strings: TStrings; Item: string);
