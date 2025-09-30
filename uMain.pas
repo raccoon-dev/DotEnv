@@ -12,6 +12,9 @@ type
     Panel1: TPanel;
     Button1: TButton;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -39,6 +42,9 @@ begin
 
   // Read only one variable
   Label1.Caption := TDotEnv.Env['VARIABLE1'];
+  Label2.Caption := IntToStr(TDotEnv.Env.AsInteger('VARIABLE3', 123));
+  Label3.Caption := BoolToStr(TDotEnv.Env.AsBoolean('VARIABLE4', False), True);
+  Label4.Caption := FloatToStr(TDotEnv.Env.AsFloat('VARIABLE5', 123.456));
 end;
 
 end.

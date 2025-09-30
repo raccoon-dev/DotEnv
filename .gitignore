@@ -1,0 +1,5 @@
+/Win32/Debug/*.dcu
+/*.local
+/*.identcache
+/*.res
+/__history
